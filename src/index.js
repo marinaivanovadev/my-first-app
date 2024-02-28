@@ -4,13 +4,13 @@ import "jquery";
 import "popper.js/dist/umd/popper";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavBar } from "./App";
 import "./index.css";
+import App from "./App";
     
 
 
 // Use createRoot to render your element
 const root = createRoot(document.getElementById("root"));
-root.render(<NavBar />);
+root.render(<App />);
 
 
