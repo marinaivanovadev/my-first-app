@@ -19,7 +19,9 @@ export default class MainContent extends Component{
 
 
 //Executes when the user clicks on Refresh button
-    onRefreshClick() {
-        console.log("Refresh clicked");
+    onRefreshClick = () => {
+        this.setState({
+            customersCount: 7
+        });
 }
 }
