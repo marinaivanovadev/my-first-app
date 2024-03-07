@@ -8,8 +8,8 @@ export default class MainContent extends Component{
             { id: 1, name: "Ryder", phone: "123-456", address: { city: "London" } },
             { id: 2, name: "Chase", phone: "789-012", address: { city: "New York" } },
             { id: 3, name: "Marshall", phone: "345-678", address: { city: "Paris" } },
-            { id: 4, name: "Skye", phone: "901-234", address: { city: "Tokyo" } },
-            { id: 5, name: "Rocky", phone: "567-890", address: { city: "Sydney" } }
+            { id: 4, name: "Skye", phone: null, address: { city: "Tokyo" } },
+            { id: 5, name: "Rocky", phone: null, address: { city: "Sydney" } }
         ],
     };
 
@@ -39,7 +39,10 @@ export default class MainContent extends Component{
                                     <tr key={cust.id}>
                                         <td>{cust.id}</td>
                                         <td>{cust.name}</td>
-                                        <td>{cust.phone}</td>
+                                        <td>{cust.phone ?
+                                            cust.phone :
+                                            <div className="bg-warning p-2 text-center">No Phone </div>
+                                        }</td>
                                         <td>{cust.address.city}</td>
                                     </tr>
                                 );
