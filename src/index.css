@@ -1,4 +1,4 @@
-.hightlight {
+.highlight {
     background-color: #80c0b5;
 }
 
@@ -9,4 +9,13 @@
 .badge {
     background-color: #7a7b7c;
     color: #fff; 
+}
+.green-highlight {
+    color: #008000;
+    font-size: 40px;
+}
+
+.pink-highlight {
+    color: pink;
+    font-size: 25px;
 }
