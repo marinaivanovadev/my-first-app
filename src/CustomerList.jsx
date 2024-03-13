@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 
-export default class MainContent extends Component {
+export default class CustomerList extends Component {
     state = {
         pageTitle: "Customers",
         customersCount: 5,
