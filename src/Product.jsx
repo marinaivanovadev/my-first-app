@@ -19,13 +19,22 @@ export default class Product extends Component
                         <h5 className="pt-2 boarder-top">{this.state.product.productName}</h5>
                         <div>${this.state.product.price}</div>
                     </div>
-                    <div className="card-footer text-right">
-                        {this.props.children}
+                    <div className="card-footer">
+                        <div className="float-start">
+                            <span className="badge">{this.state.product.quantity}</span>
+                            <div className="btn-group">
+                                <button className="btn btn-outline-success" onClick={() => { this.props.onIncrement(this.state.product, 10); }}
+                                >+</button>
+                                <button className="btn btn-outline-success" onClick={() => { this.props.onDecrement(this.state.product, 0); }}>-</button>
+                            </div>
+                        </div>
+                        <div className="float-end">
+                         {this.props.children}   
+                        </div>
+                     
                     </div>
                 </div>
             </div>
-           
-            );
+         );
     }
-
 }
