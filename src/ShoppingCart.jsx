@@ -21,10 +21,7 @@ export default class ShoppingCart extends Component {
                 {this.state.products.map((prod) => {
                     return (
                     <Product
-                        key={prod.id}
-                        id={prod.id}
-                        productName={prod.productName}
-                        price={prod.price}
+                        key={prod.id} product={prod}
                     />
                 );
                 })}
