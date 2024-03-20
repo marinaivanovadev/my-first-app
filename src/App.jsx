@@ -8,7 +8,7 @@ Component {
         return (
             <React.Fragment>
                 <NavBar />
-                <ShoppingCart />
+                <ShoppingCart x="10" />
             </React.Fragment>
         );
     }
