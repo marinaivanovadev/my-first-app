@@ -5,23 +5,23 @@ export default class ShoppingCart extends Component {
     //mounted
     constructor(props)
     {
-        console.log("Constroctor");
+        console.log("Constroctor - Shopping cart");
         super(props);
         // initialization of the state
         this.state = {
         products: [
             { id: 1, productName: "iPhone", price: 8900, quantity: 0 },
-            { id: 2, productName: "MacBook Pro", price: 1299, quantity: 0 },
-            { id: 3, productName: "Samsung Galaxy S21", price: 999, quantity: 0 },
-            { id: 4, productName: "Sony PlayStation 5", price: 499, quantity: 0 },
-            { id: 5, productName: "Bose QuietComfort 45 Headphones", price: 329, quantity: 0 },
-            { id: 6, productName: "Samsung 55\" 4K Smart TV", price: 899, quantity: 0 }
+            // { id: 2, productName: "MacBook Pro", price: 1299, quantity: 0 },
+            // { id: 3, productName: "Samsung Galaxy S21", price: 999, quantity: 0 },
+            // { id: 4, productName: "Sony PlayStation 5", price: 499, quantity: 0 },
+            // { id: 5, productName: "Bose QuietComfort 45 Headphones", price: 329, quantity: 0 },
+            // { id: 6, productName: "Samsung 55\" 4K Smart TV", price: 899, quantity: 0 }
         ],
     };
     }
     
     render() {
-        console.log("render");
+        console.log("render - Shopping Cart");
         return (
             <div className="container-fluid">
                 <h4>Shopping Cart</h4>
@@ -46,7 +46,7 @@ export default class ShoppingCart extends Component {
 
     componentDidMount() {
         //fetch data from data source
-        console.log("cpmponentDidMount")
+        console.log("componentDidMount-Shopping Cart")
     }
 
     componentDidUpdate(prevProps, prevState) {
