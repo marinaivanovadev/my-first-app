@@ -49,6 +49,24 @@ export default class ShoppingCart extends Component {
         console.log("cpmponentDidMount")
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        console.log("componentDidUpdate - Shopping cart",
+            prevProps,
+            prevState,
+            this.props,
+            this.state
+        );
+
+        // if (prevProps.x != this.props.x) {
+        //     //make http call
+        // }
+    }
+    componentWillUnmount() {
+        console.log("componentWillUnmount - Shopping cart")
+    }
+
+
+
     //executes when the user click on + button
     handleIncrement = (product, maxValue) => {
     //get index of selected product
