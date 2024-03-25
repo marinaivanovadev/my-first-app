@@ -5,7 +5,7 @@ export default class ShoppingCart extends Component {
     //mounted
     constructor(props)
     {
-        console.log("Constroctor - Shopping cart");
+        // console.log("Constroctor - Shopping cart");
         super(props);
         // initialization of the state
         this.state = {
@@ -14,7 +14,7 @@ export default class ShoppingCart extends Component {
     }
     
     render() {
-        console.log("render - Shopping Cart");
+        // console.log("render - Shopping Cart");
         return (
             <div className="container-fluid">
                 <h4>Shopping Cart</h4>
@@ -37,35 +37,34 @@ export default class ShoppingCart extends Component {
         )
     };
 
-    componentDidMount() {
+    componentDidMount = async () => {
         //fetch data from data source
-        var promise = fetch("http://localhost:5000/products", { method: "GET" });
-        promise.then((response) => {
-            console.log(response);
-            var promise2 = response.json();
-            promise2.then((prods) => {
-                console.log(prods);
+        var response = await fetch("http://localhost:5000/products", {
+            method: "GET",
+        });
+        var prods = await response.json()
 
-                this.setState({products:prods});
-            })
-         });
-        console.log("componentDidMount-Shopping Cart")
-    }
+        console.log(prods);
+
+        this.setState({ products: prods });
+        
+        // console.log("componentDidMount-Shopping Cart")
+    };
 
     componentDidUpdate(prevProps, prevState) {
-        console.log("componentDidUpdate - Shopping cart",
-            prevProps,
-            prevState,
-            this.props,
-            this.state
-        );
+        // console.log("componentDidUpdate - Shopping cart",
+        //     prevProps,
+        //     prevState,
+        //     this.props,
+        //     this.state
+        // );
 
         // if (prevProps.x != this.props.x) {
         //     //make http call
         // }
     }
     componentWillUnmount() {
-        console.log("componentWillUnmount - Shopping cart")
+        // console.log("componentWillUnmount - Shopping cart")
     }
 
 
