@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 export default class Login extends Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props);
         this.state = {
-            email: "abc@test.com", password: "abc123"};
+            email: "abc@test.com", password: "abc123"
+        };
     }
     render() {
         return (
@@ -18,7 +18,12 @@ export default class Login extends Component {
                     <input
                         type="text"
                         className="form-control"
-                        value={this.state.email} />
+                        value={this.state.email}
+                        onChange={(event) => {
+                            this.setState({ email: event.target.value })
+
+                        }}
+                    />
                 </div>
 
                 <div className="form-group form-row">
@@ -26,11 +31,19 @@ export default class Login extends Component {
                     <input
                         type="password"
                         className="form-control"
-                        value = {this.state.password}
-                    
+                        value={this.state.password}
+                        onChange={(event) => {
+                            this.setState({ password: event.target.value })
+                        }}
                     />
                 </div>
+                <div>
+                    <button className="btn btn-primary" onClick={this.onLoginClick}>Login</button>
+                </div>
             </div>
-    );
-}
-}
+        );
+    }
+    onLoginClick = () => {
+        console.log(this.state);
+    };
+}  
