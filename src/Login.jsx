@@ -45,9 +45,21 @@ export default class Login extends Component {
             </div>
         );
     }
-    onLoginClick = () => {
+    onLoginClick = async () => {
         console.log(this.state);
-        if (this.state.email === "admin@test.com" && this.state.password === "admin123")
+        // Check if email and password fields are empty
+        if (!this.state.email || !this.state.password) {
+            this.setState({
+                message: <span className="text-danger">Email and password are required</span>
+            });
+            return; // Exit function early if fields are empty
+        }
+        
+        var response = await fetch(`http://localhost:5000/users?email=${this.state.email}&password=${this.state.password}`, { method: "GET"}
+        );
+        var body = await response.json();
+        console.log(body);
+        if (body.length > 0)
         {
             //success
             this.setState({
