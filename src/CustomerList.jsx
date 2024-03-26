@@ -5,17 +5,20 @@ export default class CustomerList extends Component {
     state = {
         pageTitle: "Customers",
         customersCount: 5,
-        customers:
-            [
-                { id: 1, name: "Ryder", phone: "123-456", address: { city: "London" }, photo: "https://picsum.photos/id/1060/60" },
-                { id: 2, name: "Chase", phone: "789-012", address: { city: "New York" }, photo: "https://picsum.photos/id/1061/60" },
-                { id: 3, name: "Marshall", phone: "345-678", address: { city: "Paris" }, photo: "https://picsum.photos/id/1062/60" },
-                { id: 4, name: "Skye", phone: "901-234", address: { city: "Tokyo" }, photo: "https://picsum.photos/id/1063/60" },
-                { id: 5, name: "Rocky", phone: "567-890", address: { city: "Sydney" }, photo: "https://picsum.photos/id/1064/60" }
-
-            ],
+        customers: [ ],
     };
+    componentDidMount() {
+        this.fetchCustomers();
+    }
 
+    fetchCustomers = async () => {
+        const response = await fetch("http://localhost:5000/customers", {
+            method: "GET",
+        });
+        const cust = await response.json();
+        this.setState({ customers: cust });
+    };
+    
     render() {
         return (
             <div>
